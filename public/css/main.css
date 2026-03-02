@@ -40,10 +40,67 @@ h1, h2 {
   margin-left: 2.5rem;
 }
 
+/* hamburger button hidden by default */
+#nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: auto; /* push to right edge */
+}
+#nav-toggle .hamburger,
+#nav-toggle .hamburger::before,
+#nav-toggle .hamburger::after {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--ink);
+  position: relative;
+}
+#nav-toggle .hamburger::before,
+#nav-toggle .hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+#nav-toggle .hamburger::before { top: -8px; }
+#nav-toggle .hamburger::after { top: 8px; }
+
+@media (max-width: 768px) {
+  #nav-toggle {
+    display: block;
+  }
+  .nav nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: var(--paper);
+    padding: 1rem 2rem;
+  }
+  .nav nav.open {
+    display: flex;
+  }
+  .nav a {
+    margin: 0.5rem 0;
+  }
+}
+
 .hero {
   position: relative;
   padding: 8rem 8rem; /* wider horizontal padding for homepage hero */
   max-width: 1200px;
+}
+
+/* at small widths make hero single-column */
+@media (max-width: 768px) {
+  .hero {
+    display: block;
+    padding: 6rem 4rem;
+  }
+  .hero-copy {
+    padding: 0 2rem;
+  }
 }
 
 .hero h1 {
@@ -250,9 +307,12 @@ h1, h2 {
   .nav {
     padding: 0 2rem;
     font-size: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
   }
   .team-grid {
     gap: 1.5rem;
+    grid-template-columns: 1fr; /* stack cards on very small screens */
   }
   .team-card img {
     width: 100%;
