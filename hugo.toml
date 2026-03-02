@@ -1,0 +1,25 @@
+baseURL = "https://lucaslab.org/"
+languageCode = "en-us"
+title = "Lucas Lab"
+enableRobotsTXT = true
+
+[menu]
+  [[menu.main]]
+    name = "Research"
+    url = "/research/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Publications"
+    url = "/publications/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Team"
+    url = "/team/"
+    weight = 3
+
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 4

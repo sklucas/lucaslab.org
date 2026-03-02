@@ -1,0 +1,15 @@
+{{ define "main" }}
+<section class="page">
+  <h1>Team</h1>
+  <div class="team-grid">
+    {{ range .Pages }}
+      <div class="team-card">
+        <img src="{{ .Params.photo }}" alt="{{ .Title }}">
+        <h3>{{ .Title }}</h3>
+        <p class="role">{{ .Params.role }}</p>
+        <p>{{ .Content }}</p>
+      </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

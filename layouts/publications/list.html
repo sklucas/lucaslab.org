@@ -1,0 +1,25 @@
+{{ define "main" }}
+<section class="page">
+  <h1>Publications</h1>
+  <ul id="pubs" class="pubs"></ul>
+</section>
+
+<script>
+(async () => {
+  const res = await fetch("/.netlify/functions/pubmed");
+  const pubs = await res.json();
+
+  const ul = document.getElementById("pubs");
+  pubs.forEach(p => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <strong>${p.title}</strong><br>
+      <em>${p.journal}</em> (${p.year})<br>
+      <a href="${p.url}" target="_blank" rel="noopener">PubMed</a>
+      ${p.doi ? ` | <a href="https://doi.org/${p.doi}" target="_blank" rel="noopener">DOI</a>` : ""}
+    `;
+    ul.appendChild(li);
+  });
+})();
+</script>
+{{ end }}
