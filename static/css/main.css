@@ -21,7 +21,7 @@ h1, h2 {
 }
 
 .nav {
-  position: absolute;
+  position: sticky;
   top: 2rem;
   left: 0;
   right: 0;
@@ -41,34 +41,37 @@ h1, h2 {
 }
 
 /* hamburger button hidden by default */
+/* checkbox-based hamburger label */
 #nav-toggle {
   display: none;
-  background: none;
-  border: none;
+}
+label[for="nav-toggle"] {
+  display: none;
+  margin-left: auto;
   cursor: pointer;
   padding: 0.5rem;
-  margin-left: auto; /* push to right edge */
+  position: relative;
+  width: 24px;
+  height: 18px;
 }
-#nav-toggle .hamburger,
-#nav-toggle .hamburger::before,
-#nav-toggle .hamburger::after {
+/* three bars: element's child span as middle, before/after for others */
+label[for="nav-toggle"] span,
+label[for="nav-toggle"]::before,
+label[for="nav-toggle"]::after {
+  content: '';
   display: block;
   width: 24px;
   height: 2px;
   background: var(--ink);
-  position: relative;
-}
-#nav-toggle .hamburger::before,
-#nav-toggle .hamburger::after {
-  content: '';
   position: absolute;
   left: 0;
 }
-#nav-toggle .hamburger::before { top: -8px; }
-#nav-toggle .hamburger::after { top: 8px; }
+label[for="nav-toggle"] span { top: 8px; }
+label[for="nav-toggle"]::before { top: 0; }
+label[for="nav-toggle"]::after { top: 16px; }
 
 @media (max-width: 768px) {
-  #nav-toggle {
+  label[for="nav-toggle"] {
     display: block;
   }
   .nav nav {
@@ -78,7 +81,7 @@ h1, h2 {
     background: var(--paper);
     padding: 1rem 2rem;
   }
-  .nav nav.open {
+  #nav-toggle:checked + label + #main-nav {
     display: flex;
   }
   .nav a {

@@ -16,9 +16,9 @@
 <body>
   <header class="nav">
     <a class="logo" href="/">LUCAS LAB</a>
-    <button id="nav-toggle" aria-label="Toggle menu">
-      <span class="hamburger"></span>
-    </button>
+    
+    <input type="checkbox" id="nav-toggle" hidden>
+    <label for="nav-toggle" class="hamburger" aria-label="Menu"><span></span></label>
     <nav id="main-nav">
       
         <a href="/research/">Research</a>
@@ -31,15 +31,6 @@
       
     </nav>
   </header>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var btn = document.getElementById('nav-toggle');
-      var nav = document.getElementById('main-nav');
-      btn.addEventListener('click', function() {
-        nav.classList.toggle('open');
-      });
-    });
-  </script>
 
   <main>
     
