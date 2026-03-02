@@ -74,20 +74,24 @@ h1, h2 {
   color: var(--muted);
 }
 
-.hero-art {
-  position: relative;
+.hero--clean {
+  grid-template-columns: 1fr;
+  min-height: 70vh;
+  padding-top: 10rem;
 }
 
-.arc-lg {
-  position: absolute;
-  width: 420px;
-  height: 420px;
-  border-radius: 50%;
-  border: 90px solid var(--sand);
-  right: -120px;
-  top: -40px;
+.hero--clean .hero-copy {
+  max-width: 800px;
 }
 
+.hero--clean::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--sand);
+  margin-top: 3rem;
+}
 
 .shapes {
   position: absolute;
