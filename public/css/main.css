@@ -234,6 +234,39 @@ h1, h2 {
   margin: 0;
 }
 
+/* small-screen tweaks */
+@media (max-width: 768px) {
+  .page {
+    padding: 4rem 2rem;
+  }
+  .hero {
+    padding: 6rem 4rem;
+  }
+  .hero-copy {
+    padding: 0 2rem;
+  }
+  .nav {
+    padding: 0 2rem;
+    font-size: 1rem;
+  }
+  .team-grid {
+    gap: 1.5rem;
+  }
+  .team-card img {
+    width: 100%;
+    height: auto;
+  }
+  .team-card--wide {
+    max-width: 100%;
+  }
+  .team-card--wide .team-card-left img {
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
+
 .team-card .role {
   color: var(--muted);
   font-size: 0.85rem;
