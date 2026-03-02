@@ -11,6 +11,8 @@ body {
   background: var(--bg);
   font-family: Inter, system-ui, sans-serif;
   color: var(--ink);
+  /* base size scales with viewport */
+  font-size: clamp(0.875rem, 1.2vw, 1rem);
 }
 
 h1, h2 {
@@ -27,7 +29,7 @@ h1, h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
@@ -230,7 +232,7 @@ h1, h2 {
 }
 
 .team-card h3 {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
   margin: 0;
 }
 
