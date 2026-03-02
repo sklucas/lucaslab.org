@@ -88,15 +88,6 @@ h1, h2 {
   top: -40px;
 }
 
-.dot {
-  position: absolute;
-  width: 140px;
-  height: 140px;
-  background: var(--sage);
-  border-radius: 50%;
-  right: 160px;
-  top: 260px;
-}
 
 .shapes {
   position: absolute;
