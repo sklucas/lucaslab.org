@@ -40,7 +40,7 @@ h1, h2 {
 
 .hero {
   position: relative;
-  padding: 8rem 4rem;
+  padding: 8rem 8rem; /* wider horizontal padding for homepage hero */
   max-width: 1200px;
 }
 
@@ -66,6 +66,10 @@ h1, h2 {
   font-size: clamp(3.5rem, 6vw, 2.5rem);
   line-height: 1;
   margin-bottom: 1.5rem;
+}
+
+.hero-copy {
+  padding: 0 8rem; /* match page horizontal padding */
 }
 
 .hero-copy p {
@@ -152,8 +156,9 @@ h1, h2 {
 }
 
 .page {
-  padding: 6rem;
+  padding: 6rem 8rem; /* more space on left and right */
   max-width: 1100px;
+  margin: 0 auto;    /* center the page container */
 }
 
 .page h1 {
@@ -167,10 +172,61 @@ h1, h2 {
   gap: 3rem;
 }
 
+.team-card {
+  /* default vertical stacking */
+}
+
+.team-card--wide {
+  display: flex;
+  flex-direction: column;
+  max-width: 240px;           /* cap width even when its grid cell is wide */
+  margin: 0 auto;             /* centre the card in its cell */
+}
+
 .team-card img {
-  width: 100%;
+  width: 220px;                /* fixed display size for all images */
+  height: 220px;
+  object-fit: cover;           /* crop to fill while preserving aspect ratio */
   border-radius: 18px;
   margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+/* description container inside wide card */
+.team-card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* layout for PI card: left column for image+header, right column for description */
+.team-card--wide .team-card-left,
+.team-card--wide .team-card-right {
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .team-card--wide {
+    /* flex display already set globally */
+  }
+  .team-card--wide .team-card-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;         /* left-align like normal cards */
+    flex-shrink: 0;
+  }
+  .team-card--wide .team-card-left img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 1rem; /* same space as other cards */
+    margin-right: 1rem;
+  }
+  .team-card--wide .team-card-right {
+    padding-left: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .team-card h3 {
@@ -181,6 +237,20 @@ h1, h2 {
 .team-card .role {
   color: var(--muted);
   font-size: 0.85rem;
+}
+
+@media (min-width: 600px) {
+  .team-card--wide {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .team-card--wide img {
+    width: auto;
+    max-width: 150px;
+    margin-bottom: 0;
+    margin-right: 1rem;
+  }
 }
 
 .footer {

@@ -7,4 +7,7 @@ links:
     url: https://scholar.google.com/
   - name: GitHub
     url: https://github.com/sklucas
+weight: 10
 ---
+
+Dr. Lucas...
