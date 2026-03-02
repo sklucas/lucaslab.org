@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta name="generator" content="Hugo 0.156.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
-  <title>Lucas Lab | Lucas Lab</title>
+  <title> | Lucas Lab</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
@@ -31,18 +30,29 @@
 
   <main>
     
-<section class="hero hero--clean">
-  <div class="hero-copy">
-    <h1>Investigating the microbiome disruption response</h1>
-    <p>
-      We are a diverse team of researchers at Syracuse University working to understand how the microbiome responds to perturbations like antibiotics, diet, and infection.
-	</p>
-	<p>
-	  We use a combination of experimental and computational approaches to study the dynamics of microbial communities and their interactions with the host.
-    </p>
-  </div>
+<section class="page">
+  <h1>Publications</h1>
+  <ul id="pubs" class="pubs"></ul>
 </section>
 
+<script>
+(async () => {
+  const res = await fetch("/.netlify/functions/pubmed");
+  const pubs = await res.json();
+
+  const ul = document.getElementById("pubs");
+  pubs.forEach(p => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <strong>${p.title}</strong><br>
+      <em>${p.journal}</em> (${p.year})<br>
+      <a href="${p.url}" target="_blank" rel="noopener">PubMed</a>
+      ${p.doi ? ` | <a href="https://doi.org/${p.doi}" target="_blank" rel="noopener">DOI</a>` : ""}
+    `;
+    ul.appendChild(li);
+  });
+})();
+</script>
 
   </main>
 

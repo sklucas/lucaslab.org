@@ -8,4 +8,3 @@ links:
   - name: GitHub
     url: https://github.com/sklucas
 ---
-Focuses on translational genomics and ML.

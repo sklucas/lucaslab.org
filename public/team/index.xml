@@ -15,18 +15,11 @@
       <description>&lt;p&gt;Undergraduate researcher extraordinaire!&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Dr. Alex Smith</title>
-      <link>http://localhost:1313/team/anton_jay/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/team/anton_jay/</guid>
-      <description>&lt;p&gt;Focuses on translational genomics and ML.&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>Dr. Sarah Lucas</title>
       <link>http://localhost:1313/team/sarah_lucas/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/team/sarah_lucas/</guid>
-      <description>&lt;p&gt;Focuses on translational genomics and ML.&lt;/p&gt;</description>
+      <description></description>
     </item>
     <item>
       <title>Marcella Morrisson</title>
